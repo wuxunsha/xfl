@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,IE=IE9">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" href="./src/public/favicon.ico">
     <title>新方略</title>
     <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        background-color: #fff  !important;
-      }
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #fff !important;
+        }
     </style>
-  </head>
-  <body>
-    <script>
-      function selfAdaption () {
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 23 + 'px'
-      }
+</head>
 
-      selfAdaption()
-      window.onresize = () => selfAdaption()
+<body>
+    <script>
+        function selfAdaption() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 23 + 'px'
+        }
+
+        selfAdaption()
+        window.onresize = () => selfAdaption()
     </script>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-  </body>
+</body>
+
 </html>

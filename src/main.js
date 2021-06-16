@@ -8,28 +8,34 @@ import App from './App'
 import router from './router'
 import store from './store/index.js'
 import './assets/iconfont/iconfont.css'
+import 'lib-flexible/flexible.js'
+import './utils/registerVant'
+import 'vant/lib/index.css'
+
+import VueAnimateNumber from 'vue-animate-number'
+Vue.use(VueAnimateNumber)
 
 router.beforeEach((to, from, next) => {
-  let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
-  if (flag) {
-    console.log("移动端")
-    store.commit('setUserAgent', 'h5')
-    next()
-  } else {
-    console.log("pc端")
-    store.commit('setUserAgent', 'pc')
-    next()
-  }
+    let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+    if (flag) {
+        console.log("移动端")
+        store.commit('setUserAgent', 'h5')
+        next()
+    } else {
+        console.log("pc端")
+        store.commit('setUserAgent', 'pc')
+        next()
+    }
 })
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-/* eslint-disable no-new */
+    /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  store,
-  router,
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    store,
+    router,
+    template: '<App/>',
+    components: { App }
 })
