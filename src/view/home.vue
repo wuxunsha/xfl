@@ -1,51 +1,51 @@
 <template>
-  <div class="main">
+  <div class="main-box">
     <div v-if="isEquipmentType === 'pc'" class="pc">
       <!-- 顶部导航栏 -->
       <div :class="offsetFlag ? 'header-main height-opacity' : 'header-main'">
-        <div class="header-logo">
+        <div class="header-logo" @click="tzHome">
           <img src="../assets/image/logo/logo.png" alt>
         </div>
         <div class="header-nav">
           <div>
             <ul>
-              <li>
+              <li @click="tzHome">
                 <p>首页</p>
               </li>
               <li>
-                <p>品牌体系</p>
+                <p @click="tzPptx">品牌体系</p>
                 <div class="pptx-nav">
                   <ul>
-                    <li>
-                      <p>买房送装修</p>
+                    <li @click="tzMfstzb">
+                      <p>买房送套餐包</p>
                     </li>
-                    <li>
-                      <p>整装体系</p>
+                    <li @click="tzZztx">
+                      <p>整装科技</p>
                     </li>
                   </ul>
                 </div>
               </li>
               <li>
-                <p>项目案例</p>
+                <p @click="tzDcxm">项目案例</p>
                 <div class="xmal-nav">
                   <ul>
-                    <li>
+                    <li @click="tzDcxm">
                       <p>地产项目</p>
                     </li>
-                    <li>
+                    <li @click="tzKjfg">
                       <p>空间风格</p>
                     </li>
                   </ul>
                 </div>
               </li>
               <li>
-                <p>联系我们</p>
+                <p @click="lxwm">联系我们</p>
                 <div class="lxwm-nav">
                   <ul>
-                    <li>
+                    <li @click="tzZhlhz">
                       <p>战略合作</p>
                     </li>
-                    <li>
+                    <li @click="tzShwhz">
                       <p>商务合作</p>
                     </li>
                   </ul>
@@ -55,7 +55,7 @@
           </div>
           <div>
             <p>全国统一服务热线</p>
-            <p>400-800-8996</p>
+            <p>0731-23108999</p>
           </div>
         </div>
       </div>
@@ -78,63 +78,65 @@
       </div>
       <!-- 关于我们 -->
       <div class="about-us">
-        <div class="about-us-title">
-          <h4>关于我们</h4>
-          <p>房地产营销全业态创新发展模式践行者</p>
-        </div>
         <div class="about-us-content">
-          <div class="about-us-content-text">
-            <h4>
-              "Practitioner of the innovative development model of the whole business of real estate marketing"
-            </h4>
-            <p>新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链一体化新模式的探索，以前瞻视野和创新驱动聚力打造一站式全品类家装产品供应以及精装服务的升级转型。</p>
-            <p>公司始终以客户需求为中心，坚持全产业链一体化多方共赢的可持续经营理念，与国内外知名品牌厂商集中采购深度合作，去中间化以及C2F全产业供应链流通环节无缝衔接，充分发挥在基础装修、主材产品、固装家具、活动家具、软装配饰、全屋家电等家居资源的规模效应和集采优势，为实现客户拎包入住提供一站式最具性价比优势的整体家装解决方案。</p>
-            <div class="ibrand-num">
-              <ul>
-                <li>
-                  <p>
-                    <span>
-                      <animate-number from="1" to="60" ref="myNum01"></animate-number>
-                    </span>
-                    <span>余</span>
-                    <span>城</span>
-                  </p>
-                  <p>项目落地</p>
-                </li>
-                <li>
-                  <p>
-                    <span>
-                      <animate-number from="1" to="120" ref="myNum02"></animate-number>
-                    </span>
-                    <span>亿</span>
-                    <span>+</span>
-                  </p>
-                  <p>成交额</p>
-                </li>
-                <li>
-                  <p>
-                    <span>
-                      <animate-number from="1" to="24" ref="myNum03"></animate-number>
-                    </span>
-                    <span>小时</span>
-                  </p>
-                  <p>无条件随时安排发货</p>
-                </li>
-                <li>
-                  <p>
-                    <span>
-                      <animate-number from="1" to="180" ref="myNum04"></animate-number>
-                    </span>
-                    <span>万</span>
-                    <span>+</span>
-                  </p>
-                  <p>项目覆盖面积</p>
-                </li>
-              </ul>
-            </div>
+          <div class="about-us-title">
+            <h4>关于我们</h4>
+            <p>房地产营销全业态创新发展模式践行者</p>
           </div>
-          <div class="about-us-content-image">
-            <img src="../assets/image/gywm/gywm.png" alt>
+          <div class="about-us-content">
+            <div class="about-us-content-text">
+              <h4>
+                "Practitioner of the innovative development model of the whole business of real estate marketing"
+              </h4>
+              <p>新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链一体化新模式的探索，以前瞻视野和创新驱动聚力打造一站式全品类家装产品供应以及精装服务的升级转型。</p>
+              <p>公司始终以客户需求为中心，坚持全产业链一体化多方共赢的可持续经营理念，与国内外知名品牌厂商集中采购深度合作，去中间化以及C2F全产业供应链流通环节无缝衔接，充分发挥在基础装修、主材产品、固装家具、活动家具、软装配饰、全屋家电等家居资源的规模效应和集采优势，为实现客户拎包入住提供一站式最具性价比优势的整体家装解决方案。</p>
+              <div class="ibrand-num">
+                <ul>
+                  <li>
+                    <p>
+                      <span>
+                        <animate-number from="1" to="60" ref="myNum01"></animate-number>
+                      </span>
+                      <span>余</span>
+                      <span>城</span>
+                    </p>
+                    <p>项目落地</p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>
+                        <animate-number from="1" to="120" ref="myNum02"></animate-number>
+                      </span>
+                      <span>亿</span>
+                      <span>+</span>
+                    </p>
+                    <p>成交额</p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>
+                        <animate-number from="1" to="24" ref="myNum03"></animate-number>
+                      </span>
+                      <span>小时</span>
+                    </p>
+                    <p>无条件随时安排发货</p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>
+                        <animate-number from="1" to="180" ref="myNum04"></animate-number>
+                      </span>
+                      <span>万</span>
+                      <span>+</span>
+                    </p>
+                    <p>项目覆盖面积</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="about-us-content-image">
+              <img src="../assets/image/gywm/gywm.png" alt>
+            </div>
           </div>
         </div>
       </div>
@@ -294,9 +296,9 @@
               <el-carousel-item v-for="item in imgLIst" :key="item.id">
                 <div class="swiper-image-box">
                   <el-image :src="item.src" class="swiper-image"></el-image>
-                  <div class="swiper-image-moda" @click="zzkjDetails(item.title)">
+                  <div class="swiper-image-moda">
                     <p>{{item.title}}</p>
-                    <p>
+                    <p @click="zzkjDetails(item.value)">
                       <span>了解详情</span>
                       <i class="el-icon-arrow-right"></i>
                     </p>
@@ -317,37 +319,37 @@
           </div>
           <div class="jzjz-al">
             <ul>
-              <li>
+              <li @click="dcxmDetails(1)">
                 <div>
                   <img src="../assets/image/xmal/mdlhy.jpg" alt>
                 </div>
                 <div>
                   <h4>马德里花园</h4>
-                  <div>
+                  <div @click.stop="lxwm">
                     <p>预约</p>
                     <p>咨询</p>
                   </div>
                 </div>
               </li>
-              <li>
+              <li @click="dcxmDetails(2)">
                 <div>
                   <img src="../assets/image/xmal/ylw.jpg" alt>
                 </div>
                 <div>
                   <h4>御龙湾</h4>
-                  <div>
+                  <div @click.stop="lxwm">
                     <p>预约</p>
                     <p>咨询</p>
                   </div>
                 </div>
               </li>
-              <li>
+              <li @click="dcxmDetails(3)">
                 <div>
                   <img src="../assets/image/xmal/bjyh.jpg" alt>
                 </div>
                 <div>
                   <h4>滨江壹号</h4>
-                  <div>
+                  <div @click.stop="lxwm">
                     <p>预约</p>
                     <p>咨询</p>
                   </div>
@@ -367,10 +369,12 @@
           <div class="swiper">
             <el-carousel :interval="4000" type="card" height="390px" indicator-position="none">
               <el-carousel-item v-for="item in xmalLIst" :key="item.id">
-                <div class="swiper-image-box">
-                  <el-image :src="item.src" class="swiper-image"></el-image>
+                <div class="pc-xmal-swiper-box" @click="dcxmDetails(item.value)">
+                  <div class="swiper-image-box">
+                    <el-image :src="item.src" class="swiper-image"></el-image>
+                  </div>
+                  <p class="swiper-title">{{item.title}}</p>
                 </div>
-                <p class="swiper-title">{{item.title}}</p>
               </el-carousel-item>
             </el-carousel>
           </div>
@@ -470,39 +474,33 @@
         <div class="content">
           <div class="titis">
             <h4>战 略 合 作</h4>
-            <p>已成功服务上百家企业</p>
+            <p>平台市场主流合作品牌</p>
           </div>
           <div class="zlhz-img">
             <ul>
               <li>
-                <img src="../assets/image/hz1.jpg" alt>
+                <img src="../assets/image/zlhz/tcl.jpg" alt>
               </li>
               <li>
-                <img src="../assets/image/hz2.jpg" alt>
+                <img src="../assets/image/zlhz/cw.jpg" alt>
               </li>
               <li>
-                <img src="../assets/image/hz3.jpg" alt>
+                <img src="../assets/image/zlhz/kkwy.jpg" alt>
               </li>
               <li>
-                <img src="../assets/image/hz4.jpg" alt>
+                <img src="../assets/image/zlhz/hr.jpg" alt>
               </li>
               <li>
-                <img src="../assets/image/hz5.jpg" alt>
+                <img src="../assets/image/zlhz/jly.jpg" alt>
               </li>
               <li>
-                <img src="../assets/image/hz6.jpg" alt>
+                <img src="../assets/image/zlhz/trj.jpg" alt>
               </li>
               <li>
-                <img src="../assets/image/hz7.jpg" alt>
+                <img src="../assets/image/zlhz/xzytc.jpg" alt>
               </li>
               <li>
-                <img src="../assets/image/hz8.jpg" alt>
-              </li>
-              <li>
-                <img src="../assets/image/hz9.jpg" alt>
-              </li>
-              <li>
-                <img src="../assets/image/hz10.jpg" alt>
+                <img src="../assets/image/zlhz/xfl.jpg" alt>
               </li>
             </ul>
           </div>
@@ -513,7 +511,7 @@
         <div class="content">
           <div class="titis">
             <h4>相 关 资 讯</h4>
-            <p>关注搜好房 掌握一手资讯</p>
+            <p>关注新方略 掌握一手资讯</p>
           </div>
           <div class="xgzx-content">
             <div class="xgzx-swiper">
@@ -535,8 +533,8 @@
                     <p>2021-05</p>
                   </div>
                   <div>
-                    <h4>“领创深耕·筑梦未来”仁汇集团十周年庆暨搜好房整装科技正式发布，三大战略体系深化布局</h4>
-                    <p>2021年4月25日，以“领创深耕·筑梦未来”为主题的仁汇集团十周年庆暨搜好房整装发布...</p>
+                    <h4>房地产营销全业态创新发展模式践行者</h4>
+                    <p>新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链...</p>
                   </div>
                 </li>
                 <li>
@@ -545,18 +543,8 @@
                     <p>2021-04</p>
                   </div>
                   <div>
-                    <h4>搜好房：20家品牌方出席整装发布会，搜好房战略实力落子，新征程再出发</h4>
-                    <p>4月，搜好房整装科技发布会在苏召开，西门子，TCL，欧派，大自然，箭牌，马可波罗，...</p>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <p>27</p>
-                    <p>2021-05</p>
-                  </div>
-                  <div>
-                    <h4>搜好房：前瞻布局加速发力精装后市场，定制加载打造幸福人居新生活</h4>
-                    <p>搜好房以前瞻性的眼光紧跟行业风口，构建精装加载战略生态体系，纵横布局精装后市...</p>
+                    <h4>一站式全屋整装 拎包入住 赠送价值12万品牌套餐包</h4>
+                    <p>我们不仅仅是送，新方略首创一站式厂商源头集采，更是一种全新生活方式的创享</p>
                   </div>
                 </li>
               </ul>
@@ -573,64 +561,11 @@
         </div>
       </div>
       <!-- 底部 -->
-      <div class="footer">
-        <div class="content">
-          <div class="footer-top">
-            <div>
-              <img src="../assets/image/logo/footer-logo.png" alt>
-            </div>
-            <div>
-              <p>
-                <img src="../assets/image/ftel.png" alt>
-              </p>
-              <p>邮 箱：souhaofang@aliyun.com</p>
-              <p>地 址：苏州相城区人民路4555号</p>
-              <p>繁花中心A楼西座7层</p>
-            </div>
-            <div>
-              <div>
-                <img src="../assets/image/douyin.png" alt>
-              </div>
-              <div>
-                <img src="../assets/image/erweima.png" alt>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-text">
-          <div>
-            <p>
-              <span>Copyright © 搜好房 版权所有</span>
-              <span>网站地图</span>
-              <span>苏ICP备2020050978号-2</span>
-            </p>
-          </div>
-        </div>
-      </div>
+      <footerPc></footerPc>
     </div>
     <div v-else class="yd">
       <!-- 顶部导航栏 -->
-      <div class="yd-header">
-        <div class="header-logo">
-          <img src="../assets/image/logo/h5-logo.png" alt="">
-        </div>
-        <div class="header-navbar">
-          <ul>
-            <li>
-              <span>品牌</span>
-            </li>
-            <li>
-              <span>资讯</span>
-            </li>
-            <li>
-              <span>联系</span>
-            </li>
-          </ul>
-        </div>
-        <div class="header-nav" @click="h5Nav">
-          <img src="../assets/image/yd-header/menu.png" alt="">
-        </div>
-      </div>
+      <headerYd></headerYd>
       <!-- 轮播图 -->
       <div class="yd-swipe">
         <van-swipe class="my-swipe" :autoplay="4000">
@@ -792,7 +727,7 @@
           </div>
           <div class="yd-xmal-swipe">
             <van-swipe class="my-swipe" :autoplay="4000">
-              <van-swipe-item v-for="(item,index) in ydZxfgLIst" :key="index">
+              <van-swipe-item v-for="(item,index) in ydZxfgLIst" :key="index" @click="tzKjfgDetails(item.value)">
                 <img :src="item.src" alt>
               </van-swipe-item>
             </van-swipe>
@@ -808,19 +743,19 @@
           </div>
           <div class="yd-jzjz-list">
             <ul>
-              <li>
+              <li @click="dcxmDetails(1)">
                 <p>
                   <img src="../assets/image/xmal/mdlhy.jpg" alt="">
                 </p>
                 <p>马德里花园</p>
               </li>
-              <li>
+              <li @click="dcxmDetails(2)">
                 <p>
                   <img src="../assets/image/xmal/ylw.jpg" alt="">
                 </p>
                 <p>御龙湾</p>
               </li>
-              <li>
+              <li @click="dcxmDetails(3)">
                 <p>
                   <img src="../assets/image/xmal/bjyh.jpg" alt="">
                 </p>
@@ -891,54 +826,120 @@
           </div>
         </div>
       </div>
+      <!-- 战略合作 -->
+      <div class="yd-zlhz">
+        <div class="content">
+          <div class="titis">
+            <h4>战 略 合 作</h4>
+            <p>平台市场主流合作品牌</p>
+          </div>
+          <div class="zlhz-img">
+            <ul>
+              <li>
+                <img src="../assets/image/zlhz/tcl.jpg" alt>
+              </li>
+              <li>
+                <img src="../assets/image/zlhz/cw.jpg" alt>
+              </li>
+              <li>
+                <img src="../assets/image/zlhz/kkwy.jpg" alt>
+              </li>
+              <li>
+                <img src="../assets/image/zlhz/hr.jpg" alt>
+              </li>
+              <li>
+                <img src="../assets/image/zlhz/jly.jpg" alt>
+              </li>
+              <li>
+                <img src="../assets/image/zlhz/trj.jpg" alt>
+              </li>
+              <li>
+                <img src="../assets/image/zlhz/xzytc.jpg" alt>
+              </li>
+              <li>
+                <img src="../assets/image/zlhz/xfl.jpg" alt>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- 相关资讯 -->
+      <div class="yd-xgzx">
+        <div class="main3_l">
+          <div class="title">
+            <h4>相 关 
+              <span>资 讯</span>
+            </h4>
+            <p>关注新方略 掌握一手资讯</p>
+          </div>
+          <div class="yd-xgzx-tab">
+            <van-tabs v-model="ydXgzxTabActive" animated>
+              <van-tab title="品牌动态" name="1">
+                <div class="yd-xgzx-tab-content">
+                  <ul>
+                    <li @click="ydzxDetails(1)">
+                      <div>
+                        <img src="../assets/image/gywm/gywm.png" alt="">
+                      </div>
+                      <div>
+                        <h4>房地产营销全业态创新发展模式...</h4>
+                        <p>新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年...</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </van-tab>
+              <van-tab title="行业新闻" name="2">
+                <div class="yd-xgzx-tab-content">
+                  <ul>
+                    <li @click="ydzxDetails(2)">
+                      <div>
+                        <img src="../assets/image/xgzx/xgzx02.jpg" alt="">
+                      </div>
+                      <div>
+                        <h4>一站式全屋整装 拎包入住 赠送...</h4>
+                        <p>我们不仅仅是送，新方略首创一站式厂商源头集采，更是一种全新生活...</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </van-tab>
+            </van-tabs>
+          </div>
+        </div>
+      </div>
+      <!-- 关于我们 -->
+      <div class="yd-gywm">
+        <div class="content">
+          <div class="titis">
+            <h4>关 于 我 们</h4>
+            <p>与生俱来的尊贵品质</p>
+          </div>
+          <div class="yd-gywm-content">
+            <div>
+              <img src="../assets/image/gywm/gywm.png" alt="">
+            </div>
+            <div>
+              <h4>新方略</h4>
+              <p>新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链一体化新模式的探索，以前瞻视野和创新驱动聚力打造一站式全品类家装产品供应以及精装服务的升级转型。</p>
+              <p>公司始终以客户需求为中心，坚持全产业链一体化多方共赢的可持续经营理念，与国内外知名品牌厂商集中采购深度合作，去中间化以及C2F全产业供应链流通环节无缝衔接，充分发挥在基础装修、主材产品、固装家具、活动家具、软装配饰、全屋家电等家居资源的规模效应和集采优势，为实现客户拎包入住提供一站式最具性价比优势的整体家装解决方案。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <bottomYd></bottomYd>
 
-      <myFooter :footerNavActive="1"></myFooter>
-    </div>
-
-    <!-- 顶部导航栏弹窗 -->
-    <div class="navTop-dialog" v-if="navTopShow">
-      <ul>
-        <li>
-          <p>网站首页</p>
-        </li>
-        <li>
-          <p>品牌形象</p>
-          <p>
-            <van-icon name="arrow" />
-          </p>
-        </li>
-        <li>
-          <p>品牌体系</p>
-          <p>
-            <van-icon name="arrow" />
-          </p>
-        </li>
-        <li>
-          <p>项目案例</p>
-          <p>
-            <van-icon name="arrow" />
-          </p>
-        </li>
-        <li>
-          <p>资讯中心</p>
-          <p>
-            <van-icon name="arrow" />
-          </p>
-        </li>
-        <li>
-          <p>联系我们</p>
-          <p>
-            <van-icon name="arrow" />
-          </p>
-        </li>
-      </ul>
+      <footerYd :footerNavActive="1"></footerYd>
     </div>
   </div>
 </template>
 
 <script>
 import store from '../store/index.js'
-import myFooter from '../components/footer.vue'
+import footerYd from '../components/yd/footerYd.vue'
+import headerYd from '../components/yd/headerYd.vue'
+import bottomYd from '../components/yd/bottomYd.vue'
+import footerPc from '../components/pc/footerPc.vue'
 export default {
   name: 'main',
   data() {
@@ -949,39 +950,46 @@ export default {
         {
           id: "carousel-item-1",
           src: require("../assets/image/zzkj/xzsjy.png"),
-          title: '新中式简约'
+          title: '新中式简约',
+          value: 1
         },
         {
           id: "carousel-item-2",
           src: require("../assets/image/zzkj/xdqszs.png"),
-          title: '现代轻奢'
+          title: '现代轻奢',
+          value: 2
         },
         {
           id: "carousel-item-3",
           src: require("../assets/image/zzkj/jyos.png"),
-          title: '简约欧式'
+          title: '简约欧式',
+          value: 3
         },
         {
           id: "carousel-item-4",
           src: require("../assets/image/zzkj/xdhbh.png"),
-          title: '现代黑白灰'
+          title: '现代黑白灰',
+          value: 4
         }
       ],
       xmalLIst: [
         {
           id: "carousel-xmal-1",
           src: require("../assets/image/xmal/mdlhy.jpg"),
-          title: '马德里花园'
+          title: '马德里花园',
+          value: 1
         },
         {
           id: "carousel-xmal-2",
           src: require("../assets/image/xmal/ylw.jpg"),
-          title: '御龙湾'
+          title: '御龙湾',
+          value: 2
         },
         {
           id: "carousel-xmal-3",
           src: require("../assets/image/xmal/bjyh.jpg"),
-          title: '滨江壹号'
+          title: '滨江壹号',
+          value: 3
         }
       ],
       gylIsAtive: 1,
@@ -1002,93 +1010,173 @@ export default {
       xgzxLIst: [
         {
           id: "carousel-xgzx-1",
-          src: require("../assets/image/1-210510102945933-lp.png"),
-          title: '“领创深耕·筑梦未来”仁汇集团十周年庆暨搜好房整装科技正式发布，三大战略体系深化布局',
-          text: '2021年4月25日，以“领创深耕·筑梦未来”为主题的仁汇集团十周年庆暨搜好房整装发布...'
+          src: require("../assets/image/gywm/gywm.png"),
+          title: '房地产营销全业态创新发展模式践行者',
+          text: '新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链...'
         },
         {
           id: "carousel-xgzx-2",
-          src: require("../assets/image/1-210510111214232-lp.png"),
-          title: '搜好房：20家品牌方出席整装发布会，搜好房战略实力落子，新征程再出发',
-          text: '4月，搜好房整装科技发布会在苏召开，西门子，TCL，欧派，大自然，箭牌，马可波罗，...'
-        },
-        {
-          id: "carousel-xgzx-3",
-          src: require("../assets/image/1-21052GGP5331-lp.png"),
-          title: '搜好房：前瞻布局加速发力精装后市场，定制加载打造幸福人居新生活',
-          text: '搜好房以前瞻性的眼光紧跟行业风口，构建精装加载战略生态体系，纵横布局精装后市...'
-        },
-        {
-          id: "carousel-xgzx-4",
-          src: require("../assets/image/1-2105191G040R4-lp.png"),
-          title: '搜好房整装：甄选苏式精工，初心礼敬时代，匠心雕镂时光',
-          text: '搜好房以匠选苏式精工的笃正态度对待每一次家装施工，拥有全栈资深装工团队，全屋...'
+          src: require("../assets/image/xgzx/xgzx02.jpg"),
+          title: '一站式全屋整装 拎包入住 赠送价值12万品牌套餐包',
+          text: '我们不仅仅是送，新方略首创一站式厂商源头集采，更是一种全新生活方式的创享'
         }
       ],
-      navTopShow: false,
       // 移动端
       ydZxfgLIst: [
         {
           id: "carousel-yd-zxfg-1",
           src: require("../assets/image/zzkj/yd-xzsjy.jpg"),
-          title: '新中式简约'
+          title: '新中式简约',
+          value: 1
         },
         {
           id: "carousel-yd-zxfg-2",
           src: require("../assets/image/zzkj/yd-xdqs.jpg"),
-          title: '现代轻奢'
+          title: '现代轻奢',
+          value: 2
         },
         {
           id: "carousel-yd-zxfg-3",
           src: require("../assets/image/zzkj/yd-jyos.jpg"),
-          title: '简约欧式'
+          title: '简约欧式',
+          value: 3
         },
         {
           id: "carousel-yd-zxfg-4",
           src: require("../assets/image/zzkj/yd-xdhbh.jpg"),
-          title: '现代黑白灰'
+          title: '现代黑白灰',
+          value: 4
         }
-      ]
+      ],
+      ydXgzxTabActive: '1'
     }
   },
   components: {
-    myFooter
+    footerYd,
+    headerYd,
+    bottomYd,
+    footerPc
   },
   created() {
     console.log(this.isEquipmentType)
   },
   methods: {
     // 了解整装科技详情
-    zzkjDetails(title) {
-      console.log(title)
+    zzkjDetails(type) {
+      this.$router.push({
+        path: '/kjfgDetails',
+        query: {
+          type: type
+        }
+      })
     },
     // 供应链资源类型改变
     gylNavChange(id) {
       this.gylIsAtive = id
     },
-    // 打开H5导航栏
-    h5Nav() {
-      this.navTopShow = !this.navTopShow
+    // 跳转首页
+    tzHome() {
+      this.$router.push({
+        path: '/'
+      })
     },
-    // 返回一个特定的 DOM 节点，作为挂载的父节点
-    getContainer() {
-      return document.querySelector('.yd-header');
+    // 联系我们
+    lxwm() {
+      this.$router.push({
+        path: '/lxwm'
+      })
+    },
+    // 跳转战略合作
+    tzZhlhz() {
+      this.$router.push({
+        path: '/zhlhz'
+      })
+    },
+    // 商务合作
+    tzShwhz() {
+      this.$router.push({
+        path: '/shwhz'
+      })
+    },
+    // 品牌体系
+    tzPptx() {
+      this.$router.push({
+        path: '/pinpaitx'
+      })
+    },
+    // 买房送套餐包
+    tzMfstzb() {
+      this.$router.push({
+        path: '/mfstzb'
+      })
+    },
+    // 整装科技
+    tzZztx() {
+      this.$router.push({
+        path: '/zztx'
+      })
+    },
+    // 地产项目
+    tzDcxm() {
+      this.$router.push({
+        path: '/dcxm'
+      })
+    },
+    // 空间风格
+    tzKjfg() {
+      this.$router.push({
+        path: '/kjfg'
+      })
+    },
+    // 地产项目详情
+    dcxmDetails(type) {
+      this.$router.push({
+        path: '/dcxmDetails',
+        query: {
+          type: type
+        }
+      })
+    },
+    // 空间风格详情
+    tzKjfgDetails(type) {
+      this.$router.push({
+        path: '/kjfgDetails',
+        query: {
+          type: type
+        }
+      })
+    },
+    // 移动资讯详情
+    ydzxDetails(type) {
+      this.$router.push({
+        path: '/ydzxDetails',
+        query: {
+          type: type
+        }
+      })
     },
     handleScrollx() {
-      this.$refs.myNum01.start()
-      this.$refs.myNum02.start()
-      this.$refs.myNum03.start()
-      this.$refs.myNum04.start()
-      let topOffset = this.$refs.bannerImage.getBoundingClientRect().top
-      if (topOffset < 0) {
-        this.offsetFlag = true
-      } else {
-        this.offsetFlag = false
+      if(this.isEquipmentType === 'pc') {
+        this.$refs.myNum01.start()
+        this.$refs.myNum02.start()
+        this.$refs.myNum03.start()
+        this.$refs.myNum04.start()
+        let topOffset = this.$refs.bannerImage.getBoundingClientRect().top
+        if (topOffset < 0) {
+          this.offsetFlag = true
+        } else {
+          this.offsetFlag = false
+        }
       }
     },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScrollx, true)
+    if(this.isEquipmentType === 'pc') {
+      window.addEventListener('scroll', this.handleScrollx, true)
+    }
+  },
+  destroyed(){
+    window.removeEventListener('scroll', this.handleScrollx, true);
   }
 }
 </script>
@@ -1103,7 +1191,7 @@ h4 {
 li {
   list-style: none;
 }
-.main {
+.main-box {
   // width: 1200px !important;
   margin: 0 auto !important;
 
@@ -1122,6 +1210,7 @@ li {
         flex: 0.35;
         padding: 10px 0; /*no*/
         margin-top: 20px; /*no*/
+        cursor: pointer;
         > img {
           width: 100%;
           height: 80%;
@@ -1222,127 +1311,131 @@ li {
       // padding-bottom: 70px;
       background: #eee;
       position: relative;
-      .about-us-title {
-        font-size: 0;
-        width: 100%;
-        text-align: center;
-        padding-top: 30px; /*no*/
-        > h4 {
-          font-size: 40px; /*no*/
-          text-align: center;
-          height: 68px; /*no*/
-          line-height: 68px; /*no*/
-          font-weight: bold;
-          text-shadow: 1px 1px 1px #697b72; /*no*/
-        }
-        > p {
-          letter-spacing: 8px; /*no*/
-          text-align: center;
-          font-size: 16px; /*no*/
-        }
-      }
       .about-us-content {
-        display: flex;
-        margin-top: 20px; /*no*/
-        .about-us-content-text {
-          flex: 1;
-          padding: 0 100px; /*no*/
-          height: 100%;
+        width: 1200px; /*no*/
+        margin: 0 auto;
+        .about-us-title {
+          font-size: 0;
+          width: 100%;
+          text-align: center;
+          padding-top: 30px; /*no*/
           > h4 {
-            font: 22px "Times New Roman", Times, serif;
-            background: url(../assets/image/gywm/yinz_h.png) no-repeat left center;
-            text-transform: uppercase;
-            line-height: 40px; /*no*/
-            padding: 11px 0 11px 120px; /*no*/
+            font-size: 40px; /*no*/
+            text-align: center;
+            height: 68px; /*no*/
+            line-height: 68px; /*no*/
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #697b72; /*no*/
           }
           > p {
-            font: 20px "Microsoft YaHei";
-            line-height: 40px; /*no*/
-            color: #333;
-            margin: 22px 0 20px; /*no*/
-            text-align: left;
+            letter-spacing: 8px; /*no*/
+            text-align: center;
+            font-size: 16px; /*no*/
           }
-          .ibrand-num {
-            position: absolute;
-            left: 100px; /*no*/
-            bottom: 30px; /*no*/
-            width: 900px; /*no*/
-            height: 210px; /*no*/
-            background: #e7bd6b;
-            z-index: 10;
-            > ul {
-              display: flex;
-              > li {
-                position: relative;
-                flex: 1;
-                padding: 56px 0 0 40px; /*no*/
-                > p:nth-child(1) {
-                  text-align: left;
-                  font-size: 0;
-                  > span:nth-child(1) {
-                    font: 60px "Times New Roman", Times, serif; /*no*/
+        }
+        .about-us-content {
+          display: flex;
+          margin-top: 20px; /*no*/
+          .about-us-content-text {
+            flex: 1;
+            // padding: 0 100px; /*no*/
+            height: 100%;
+            > h4 {
+              font: 22px "Times New Roman", Times, serif;
+              background: url(../assets/image/gywm/yinz_h.png) no-repeat left center;
+              text-transform: uppercase;
+              line-height: 40px; /*no*/
+              padding: 11px 0 11px 120px; /*no*/
+            }
+            > p {
+              font: 20px "Microsoft YaHei";
+              line-height: 40px; /*no*/
+              color: #333;
+              margin: 22px 0 20px; /*no*/
+              text-align: left;
+            }
+            .ibrand-num {
+              position: absolute;
+              left: 100px; /*no*/
+              bottom: 30px; /*no*/
+              width: 900px; /*no*/
+              height: 210px; /*no*/
+              background: #e7bd6b;
+              z-index: 10;
+              > ul {
+                display: flex;
+                > li {
+                  position: relative;
+                  flex: 1;
+                  padding: 56px 0 0 40px; /*no*/
+                  > p:nth-child(1) {
+                    text-align: left;
+                    font-size: 0;
+                    > span:nth-child(1) {
+                      font: 60px "Times New Roman", Times, serif; /*no*/
+                    }
+                    > span:nth-child(2) {
+                      font: 14px "Microsoft YaHei"; /*no*/
+                    }
+                    > span:nth-child(3) {
+                      display: inline-block;
+                      width: 20px; /*no*/
+                      height: 20px; /*no*/
+                      border-radius: 20px; /*no*/
+                      background: #282828;
+                      font: 14px "Microsoft YaHei"; /*no*/
+                      color: #e7bd6b;
+                      text-align: center;
+                      line-height: 20px; /*no*/
+                    }
                   }
-                  > span:nth-child(2) {
-                    font: 14px "Microsoft YaHei"; /*no*/
-                  }
-                  > span:nth-child(3) {
-                    display: inline-block;
-                    width: 20px; /*no*/
-                    height: 20px; /*no*/
-                    border-radius: 20px; /*no*/
-                    background: #282828;
-                    font: 14px "Microsoft YaHei"; /*no*/
-                    color: #e7bd6b;
-                    text-align: center;
-                    line-height: 20px; /*no*/
+                  > p:nth-child(2) {
+                    font: 16px "Microsoft YaHei"; /*no*/
+                    color: #282828;
+                    text-align: left;
                   }
                 }
-                > p:nth-child(2) {
-                  font: 16px "Microsoft YaHei"; /*no*/
-                  color: #282828;
-                  text-align: left;
+                > li:before {
+                  display: inline-block;
+                  content: "";
+                  position: absolute;
+                  top: 70px; /*no*/
+                  right: 0;
+                  width: 1px; /*no*/
+                  height: 70px; /*no*/
+                  background: #a28448;
                 }
-              }
-              > li:before {
-                display: inline-block;
-                content: "";
-                position: absolute;
-                top: 70px; /*no*/
-                right: 0;
-                width: 1px; /*no*/
-                height: 70px; /*no*/
-                background: #a28448;
-              }
-              > li:nth-child(4):before {
-                display: contents;
-              }
-              > li:hover {
-                > p {
-                  color: #fff;
+                > li:nth-child(4):before {
+                  display: contents;
                 }
-                > p:nth-child(1) {
-                  > span:nth-child(3) {
-                    background: #fff;
+                > li:hover {
+                  > p {
+                    color: #fff;
+                  }
+                  > p:nth-child(1) {
+                    > span:nth-child(3) {
+                      background: #fff;
+                    }
                   }
                 }
               }
             }
           }
-        }
-        .about-us-content-image {
-          flex: 1;
-          height: 615px; /*no*/
-          overflow: hidden;
-          > img {
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-            transition: 1s;
+          .about-us-content-image {
+            flex: 1;
+            height: 615px; /*no*/
+            overflow: hidden;
+            > img {
+              width: 100%;
+              height: 100%;
+              cursor: pointer;
+              transition: 1s;
+            }
           }
-        }
-        .about-us-content-image:hover {
-          > img {
-            transform: scale(1.2);
+          .about-us-content-image:hover {
+            > img {
+              transform: scale(1.2);
+            }
           }
         }
       }
@@ -1700,22 +1793,24 @@ li {
           }
         }
         .swiper {
-          .swiper-image-box {
-            position: relative;
-            width: 100%;
-            height: 340px; /*no*/
-            .swiper-image {
+          .pc-xmal-swiper-box {
+            .swiper-image-box {
+              position: relative;
               width: 100%;
-              height: 100%;
+              height: 340px; /*no*/
+              .swiper-image {
+                width: 100%;
+                height: 100%;
+              }
             }
-          }
-          .swiper-title {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #000;
-            font-size: 18px; /*no*/
+            .swiper-title {
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              color: #000;
+              font-size: 18px; /*no*/
+            }
           }
         }
       }
@@ -1883,9 +1978,9 @@ li {
             justify-content: center;
             > li {
               border: 1px solid #e5e5e5; /*no*/
-              width: 18.5%;
+              width: 22%; /*no*/
               height: 132px; /*no*/
-              margin: 20px 0.5% 0 0.5%; /*no*/
+              margin: 20px 1% 0; /*no*/
               > img {
                 width: 100%;
                 height: 100%;
@@ -1896,7 +1991,6 @@ li {
       }
     }
     .xgzx {
-      // height: 500px;
       padding-bottom: 60px; /*no*/
       .content {
         width: 1200px; /*no*/
@@ -1923,6 +2017,7 @@ li {
         }
         .xgzx-content {
           display: flex;
+          min-height: 480px; /*no*/
           .xgzx-swiper {
             width: 385px; /*no*/
             height: 410px; /*no*/
@@ -1961,28 +2056,29 @@ li {
                 margin-bottom: 16px; /*no*/
                 transition: all 0.2s linear 0s;
                 padding: 22px 28px; /*no*/
+                height: 86px; /*no*/
                 cursor: pointer;
                 > div:nth-child(1) {
-                  width: 66px;
+                  width: 66px; /*no*/
                   border-right: 1px solid #ddd;
-                  line-height: 20px;
-                  padding-right: 30px;
+                  line-height: 20px; /*no*/
+                  padding-right: 30px; /*no*/
                   color: #666;
                   vertical-align: middle;
                   > p:nth-child(1) {
                     width: 100%;
                     text-align: center;
                     color: #666;
-                    font-size: 48px;
-                    line-height: 48px;
+                    font-size: 48px; /*no*/
+                    line-height: 68px; /*no*/
                     font-weight: bold;
                   }
                   > p:nth-child(2) {
                     width: 100%;
                     text-align: center;
                     color: #666;
-                    font-size: 16px;
-                    line-height: 20px;
+                    font-size: 16px; /*no*/
+                    line-height: 40px; /*no*/
                   }
                 }
                 > div:nth-child(2) {
@@ -1996,7 +2092,7 @@ li {
                   > p {
                     font-size: 14px; /*no*/
                     color: #666;
-                    line-height: 40px; /*no*/
+                    line-height: 30px; /*no*/
                     text-align: left;
                   }
                 }
@@ -2037,119 +2133,12 @@ li {
         }
       }
     }
-    .footer {
-      // height: 312px;
-      background: #191919;
-      .content {
-        width: 1200px; /*no*/
-        margin: 0 auto;
-        padding-top: 60px; /*no*/
-        .footer-top {
-          padding: 30px 0; /*no*/
-          border-top: 1px solid #353535; /*no*/
-          display: flex;
-          > div:nth-child(1) {
-            flex: 1;
-            text-align: left;
-            >img {
-              width: 60%;
-            }
-          }
-          > div:nth-child(2) {
-            width: 340px; /*no*/
-            text-align: left;
-            > p:nth-child(2),
-            > p:nth-child(3),
-            > p:nth-child(4) {
-              color: #999;
-              font-size: 14px; /*no*/
-              line-height: 22px; /*no*/
-            }
-          }
-          > div:nth-child(3) {
-            width: 300px; /*no*/
-            display: flex;
-            justify-content: space-between;
-            > div {
-              width: 130px; /*no*/
-              height: 130px; /*no*/
-              border: 5px solid #666; /*no*/
-              > img {
-                width: 100%;
-                height: 100%;
-              }
-            }
-            > div:nth-child(1) {
-              flex: 1;
-              margin-right: 10px; /*no*/
-            }
-            > div:nth-child(2) {
-              flex: 1;
-            }
-          }
-        }
-      }
-      .footer-text {
-        border-top: 1px solid #353535; /*no*/
-        > div:nth-child(1) {
-          width: 1200px; /*no*/
-          margin: 0 auto;
-          > p {
-            line-height: 60px; /*no*/
-            color: #999;
-            font-size: 12px; /*no*/
-            text-align: left;
-          }
-        }
-      }
-    }
   }
 
   /*-----移动---------*/
   .yd {
     padding-bottom: 130px;
     background: #f5f5f5;
-    .yd-header {
-      height: 56px;
-      padding: 40px 20px;
-      display: flex;
-      .header-logo {
-        width: 160px;
-        height: 50px;
-        >img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .header-navbar {
-        flex: 1;
-        line-height: 40px;
-        >ul {
-          display: flex;
-          >li {
-            flex: 1;
-            border-right: 1px solid #999;
-            >span {
-              font-size: 24px;
-              color: #666;
-              text-align: center;
-              line-height: 1;
-            }
-          }
-          >li:nth-child(3) {
-            border-right: none;
-          }
-        }
-      }
-      .header-nav {
-        width: 50px;
-        height: 36px;
-        >img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
     .yd-swipe {
       width: 100%;
       height: 800px;
@@ -2491,31 +2480,169 @@ li {
         }
       }
     }
-  }
-
-  .navTop-dialog {
-    position: fixed;
-    top: 116px;
-    width: 100%;
-    background: #e7bd6b;
-    z-index: 100;
-    >ul {
-      >li {
-        padding: 20px;
-        border-bottom: 2px solid rgba(255,255,255,0.4);
-        display: flex;
-        >p {
-          flex: 1;
-          font-size: 32px;
-          color: #fff;
+    .yd-zlhz {
+      background: #fff;
+      padding-bottom: 40px;
+      .content {
+        padding-top: 40px;
+        .titis {
+          visibility: visible;
+          animation-name: bounceIn;
+          height: 126px;
+          > h4 {
+            font-size: 40px;
+            text-align: center;
+            height: 68px;
+            line-height: 68px;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #697b72;
+            color: #333;
+          }
+          > p {
+            letter-spacing: 8px;
+            text-align: center;
+            font-size: 24px;
+          }
         }
-        >p:nth-child(1) {
-          text-align: left;
+        .zlhz-img {
+          > ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            > li {
+              border: 1px solid #e5e5e5;
+              width: 46%;
+              height: 132px;
+              margin: 20px 1% 0;
+              > img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
         }
-        >p:nth-child(2) {
-          text-align: right;
-          .van-icon {
-            vertical-align: middle;
+      }
+    }
+    .yd-xgzx {
+      padding-top: 20px;
+      height: 540px;
+      .main3_l {
+        padding: 0 20px;
+        .title {
+          visibility: visible;
+          animation-name: bounceIn;
+          height: 126px;
+          margin-top: 30px;
+          > h4 {
+            font-size: 40px;
+            text-align: center;
+            height: 68px;
+            line-height: 68px;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #697b72;
+            color: #333;
+            >span {
+              color: #e7bd6b;
+            }
+          }
+          > p {
+            letter-spacing: 8px;
+            text-align: center;
+            font-size: 24px;
+          }
+        }
+        .yd-xgzx-tab {
+          padding: 20px 0;
+          .yd-xgzx-tab-content {
+            margin-top: 40px;
+            background: #fff;
+            >ul {
+              >li {
+                display: flex;
+                height: 180px;
+                border-bottom: 2px solid #eee;
+                >div:nth-child(1) {
+                  width: 234px;
+                  height: 100%;
+                  >img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+                >div:nth-child(2) {
+                  flex: 1;
+                  padding: 20px;
+                  >h4 {
+                    font-size: 26px;
+                    color: #000;
+                    line-height: 50px;
+                  }
+                  >p {
+                    font-size: 24px;
+                    color: #666;
+                    line-height: 40px;
+                    text-align: left;
+                  }
+                }
+              }
+              >li:last-child {
+                border-bottom: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .yd-gywm {
+      background: #fff;
+      padding-bottom: 40px;
+      .content {
+        padding-top: 40px;
+        .titis {
+          visibility: visible;
+          animation-name: bounceIn;
+          height: 126px;
+          > h4 {
+            font-size: 40px;
+            text-align: center;
+            height: 68px;
+            line-height: 68px;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #697b72;
+            color: #333;
+          }
+          > p {
+            letter-spacing: 8px;
+            text-align: center;
+            font-size: 24px;
+          }
+        }
+        .yd-gywm-content {
+          width: 100%;
+          >div:nth-child(1) {
+            width: 100%;
+            height: 340px;
+            >img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          >div:nth-child(2) {
+            padding: 0 20px;
+            >h4 {
+              font-size: 32px;
+              font-weight: bold;
+              color: #000;
+              padding: 20px 0;
+            }
+            >p {
+              font-size: 12px; /*no*/
+              line-height: 40px;
+              color: #333;
+              margin: 22px 0 20px;
+              text-align: left;
+              text-indent: 2em;
+            }
           }
         }
       }
@@ -2605,31 +2732,58 @@ li {
 }
 </style>
 <style lang='less'>
-.main .el-carousel__item img {
+.main-box .el-carousel__item img {
   width: 100%;
   height: 100%;
 }
-.main .zzkj .el-carousel__indicators--outside {
+.main-box .zzkj .el-carousel__indicators--outside {
   display: none;
 }
-.main .xmal .el-carousel__indicators--outside {
+.main-box .xmal .el-carousel__indicators--outside {
   display: none;
 }
-.main .xgzx .el-carousel__indicators {
+.main-box .xgzx .el-carousel__indicators {
   width: 100%;
 }
-.main .xgzx .el-carousel__arrow {
+.main-box .xgzx .el-carousel__arrow {
   display: none;
 }
-.main .xgzx .el-carousel__button {
+.main-box .xgzx .el-carousel__button {
   background: #999;
 }
-.main .xgzx .el-carousel__indicator.is-active button {
+.main-box .xgzx .el-carousel__indicator.is-active button {
   background: #e9bb5f;
 }
-.main .xmal .el-carousel__item:hover {
+.main-box .xmal .el-carousel__item:hover {
   .swiper-title {
     color: #e9bb5f !important;
+  }
+}
+.main-box .yd-xgzx .yd-xgzx-tab {
+  .van-tabs__wrap {
+    height: 74px;
+  }
+  .van-tab {
+    margin: 0 60px;
+    background: url(../assets/image/xgzx/case_ctit.png) no-repeat;
+    background-size: 100% 100%;
+  }
+  .van-tabs__nav {
+    background: none;
+  }
+  .van-tabs__line {
+    display: none;
+  }
+  .van-tab__text {
+    font-size: 28px;
+    color: #fff;
+  }
+  .van-tab__text--ellipsis {
+    overflow: unset;
+  }
+  .van-tab--active {
+    background: url(../assets/image/xgzx/case_ctith.png) no-repeat;
+    background-size: 100% 100%;
   }
 }
 </style>
