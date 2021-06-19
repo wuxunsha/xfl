@@ -118,6 +118,9 @@
 
       <!-- 底部 -->
       <footerPc></footerPc>
+
+      <toolbar></toolbar>
+      
     </div>
     <div v-else class="yd">
       <!-- 顶部导航栏 -->
@@ -154,6 +157,7 @@ import headerYd from '../components/yd/headerYd.vue'
 import bottomYd from '../components/yd/bottomYd.vue'
 import footerPc from '../components/pc/footerPc.vue'
 import tjalPc from '../components/pc/tjalPc.vue'
+import toolbar from '../components/pc/toolbar.vue'
 export default {
   name: 'main',
   data() {
@@ -226,7 +230,8 @@ export default {
     headerYd,
     bottomYd,
     footerPc,
-    tjalPc
+    tjalPc,
+    toolbar
   },
   created() {
     this.type = this.$route.query.type

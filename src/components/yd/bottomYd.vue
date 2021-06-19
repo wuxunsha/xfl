@@ -70,7 +70,7 @@ li {
   > p:nth-child(1) {
     line-height: 40px;
     > span {
-      font-size: 12px; /*no*/
+      font-size: 24px;
       color: #333;
     }
     .hs {
@@ -78,7 +78,7 @@ li {
     }
   }
   > p:nth-child(2) {
-    font-size: 12px; /*no*/
+    font-size: 24px;
     color: #333;
     line-height: 40px;
   }

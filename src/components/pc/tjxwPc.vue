@@ -6,15 +6,15 @@
           <p>推荐新闻</p>
         </div>
         <div>
-          <p>
+          <!-- <p>
             查看更多
             <span class="iconfont icon-youshuangjiantou"></span>
-          </p>
+          </p> -->
         </div>
       </div>
       <div class="pc-tjxw-content">
         <ul>
-          <li>
+          <li @click="ydzxDetails(1)">
             <div>
               <p>10</p>
               <p>2021-05</p>
@@ -24,7 +24,7 @@
               <p>新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链...</p>
             </div>
           </li>
-          <li>
+          <li @click="ydzxDetails(2)">
             <div>
               <p>30</p>
               <p>2021-04</p>
@@ -48,6 +48,15 @@ export default {
     }
   },
   methods: {
+    // 资讯详情
+    ydzxDetails(type) {
+      this.$router.push({
+        path: '/ydzxDetails',
+        query: {
+          type: type
+        }
+      })
+    }
   },
   created() {
 

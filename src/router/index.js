@@ -63,7 +63,7 @@ export default new Router({
           path: '/xiangmuanli',
           name: 'xiangmuanli',
           component: (resolve) => require(['@/view/xiangmuanli'], resolve),
-          meta: { keepAlive: true, title: '项目案例（移动）'},
+          meta: { keepAlive: true, title: '项目案例'},
         },
         {
           path: '/dcxm',
@@ -99,7 +99,13 @@ export default new Router({
           path: '/ydzxDetails',
           name: 'ydzxDetails',
           component: (resolve) => require(['@/view/ydzxDetails'], resolve),
-          meta: { keepAlive: true, title: '资讯详情(移动)'},
+          meta: { keepAlive: true, title: '资讯详情'},
+        },
+        {
+          path: '/questionnaires',
+          name: 'questionnaires',
+          component: (resolve) => require(['@/view/questionnaires'], resolve),
+          meta: { keepAlive: true, title: '一键咨询'},
         }
       ]
     }

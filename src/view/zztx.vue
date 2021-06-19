@@ -107,7 +107,7 @@
           <p class="pc-zzkj-fbt">新方略【整装科技】始终以客户需求为中心，坚持全产业链一体化多方共赢的可持续经营理念，与国内外知名品牌厂商集中采购深度合作，去中间化以及C2F全产业供应链流通环节无缝衔接，充分发挥在基础装修、主材产品、固装家具、活动家具、软装配饰、全屋电器等家居资源的规模效应和集采优势，为实现客户拎包入住提供一站式最具性价比优势的整体家装解决方案。</p>
           <div class="main3_1b">
             <ul>
-              <li>
+              <li @click="tzKjfgDetails(1)">
                 <div>
                   <img src="../assets/image/zzkj/xzsjy.png" alt>
                 </div>
@@ -116,7 +116,7 @@
                   <p>MORE+</p>
                 </div>
               </li>
-              <li>
+              <li @click="tzKjfgDetails(2)">
                 <div>
                   <img src="../assets/image/zzkj/xdqszs.png" alt>
                 </div>
@@ -125,7 +125,7 @@
                   <p>MORE+</p>
                 </div>
               </li>
-              <li>
+              <li @click="tzKjfgDetails(3)">
                 <div>
                   <img src="../assets/image/zzkj/jyos.png" alt>
                 </div>
@@ -134,7 +134,7 @@
                   <p>MORE+</p>
                 </div>
               </li>
-              <li>
+              <li @click="tzKjfgDetails(4)">
                 <div>
                   <img src="../assets/image/zzkj/xdhbh.png" alt>
                 </div>
@@ -152,6 +152,9 @@
 
       <!-- 底部 -->
       <footerPc></footerPc>
+
+      <toolbar></toolbar>
+
     </div>
 
   </div>
@@ -164,6 +167,7 @@ import headerYd from '../components/yd/headerYd.vue'
 import bottomYd from '../components/yd/bottomYd.vue'
 import footerPc from '../components/pc/footerPc.vue'
 import tjxwPc from '../components/pc/tjxwPc.vue'
+import toolbar from '../components/pc/toolbar.vue'
 export default {
   name: 'main',
   data() {
@@ -177,7 +181,8 @@ export default {
     headerYd,
     bottomYd,
     footerPc,
-    tjxwPc
+    tjxwPc,
+    toolbar
   },
   created() {
     console.log(this.isEquipmentType)
@@ -235,6 +240,15 @@ export default {
     tzShwhz() {
       this.$router.push({
         path: '/shwhz'
+      })
+    },
+    // 空间风格详情
+    tzKjfgDetails(type) {
+      this.$router.push({
+        path: '/kjfgDetails',
+        query: {
+          type: type
+        }
       })
     },
     handleScrollx() {

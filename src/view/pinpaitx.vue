@@ -159,6 +159,9 @@
 
       <!-- 底部 -->
       <footerPc></footerPc>
+
+      <toolbar></toolbar>
+
     </div>
     <div v-else class="yd">
       <!-- 顶部导航栏 -->
@@ -201,6 +204,7 @@ import bottomYd from '../components/yd/bottomYd.vue'
 import xmalYd from '../components/yd/xmalYd.vue'
 import footerPc from '../components/pc/footerPc.vue'
 import tjxwPc from '../components/pc/tjxwPc.vue'
+import toolbar from '../components/pc/toolbar.vue'
 export default {
   name: 'main',
   data() {
@@ -215,7 +219,8 @@ export default {
     bottomYd,
     footerPc,
     tjxwPc,
-    xmalYd
+    xmalYd,
+    toolbar
   },
   created() {
     console.log(this.isEquipmentType)

@@ -5,7 +5,11 @@ import {
     SwipeItem,
     Tab,
     Tabs,
-    Pagination
+    Pagination,
+    Popup,
+    Field,
+    RadioGroup,
+    Radio
 } from 'vant'
 
 Vue.use(Icon)
@@ -14,3 +18,7 @@ Vue.use(SwipeItem)
 Vue.use(Tab)
 Vue.use(Tabs)
 Vue.use(Pagination)
+Vue.use(Popup)
+Vue.use(Field)
+Vue.use(RadioGroup)
+Vue.use(Radio)

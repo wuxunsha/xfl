@@ -15,8 +15,8 @@ import 'vant/lib/index.css'
 import VueAnimateNumber from 'vue-animate-number'
 Vue.use(VueAnimateNumber)
 
-router.afterEach((to,from,next) => {
-    window.scrollTo(0,0)
+router.afterEach((to, from, next) => {
+    window.scrollTo(0, 0)
 })
 
 router.beforeEach((to, from, next) => {
@@ -24,10 +24,16 @@ router.beforeEach((to, from, next) => {
     if (flag) {
         console.log("移动端")
         store.commit('setUserAgent', 'h5')
+        if (to.meta.title) {
+            document.title = to.meta.title;
+        }
         next()
     } else {
         console.log("pc端")
         store.commit('setUserAgent', 'pc')
+        if (to.meta.title) {
+            document.title = to.meta.title;
+        }
         next()
     }
 })
@@ -35,7 +41,7 @@ router.beforeEach((to, from, next) => {
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-    /* eslint-disable no-new */
+/* eslint-disable no-new */
 new Vue({
     el: '#app',
     store,

@@ -213,6 +213,9 @@
 
       <!-- 底部 -->
       <footerPc></footerPc>
+
+      <toolbar></toolbar>
+      
     </div>
 
   </div>
@@ -225,6 +228,7 @@ import headerYd from '../components/yd/headerYd.vue'
 import bottomYd from '../components/yd/bottomYd.vue'
 import footerPc from '../components/pc/footerPc.vue'
 import tjxwPc from '../components/pc/tjxwPc.vue'
+import toolbar from '../components/pc/toolbar.vue'
 export default {
   name: 'main',
   data() {
@@ -238,7 +242,8 @@ export default {
     headerYd,
     bottomYd,
     footerPc,
-    tjxwPc
+    tjxwPc,
+    toolbar
   },
   created() {
     console.log(this.isEquipmentType)

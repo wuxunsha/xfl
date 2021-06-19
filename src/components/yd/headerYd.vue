@@ -21,45 +21,49 @@
     </div>
 
     <!-- 顶部导航栏弹窗 -->
-    <div class="navTop-dialog-box" v-if="navTopShow">
-      <div class="navTop-dialog">
-        <ul>
-          <li @click="homeNav">
-            <p>网站首页</p>
-          </li>
-          <li @click="tzPinpaixx">
-            <p>品牌形象</p>
-            <p>
-              <van-icon name="arrow"/>
-            </p>
-          </li>
-          <li @click="tzPinpaitx">
-            <p>品牌体系</p>
-            <p>
-              <van-icon name="arrow"/>
-            </p>
-          </li>
-          <li @click="tzXiangmuanli">
-            <p>项目案例</p>
-            <p>
-              <van-icon name="arrow"/>
-            </p>
-          </li>
-          <li @click="tzZxzhx">
-            <p>资讯中心</p>
-            <p>
-              <van-icon name="arrow"/>
-            </p>
-          </li>
-          <li @click="tzLxwm">
-            <p>联系我们</p>
-            <p>
-              <van-icon name="arrow"/>
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <van-popup
+      v-model="navTopShow"
+      position="top"
+      lock-scroll
+      :get-container="getContainer"
+      class="navTop-dialog"
+    >
+      <ul>
+        <li @click="homeNav">
+          <p>网站首页</p>
+        </li>
+        <li @click="tzPinpaixx">
+          <p>品牌形象</p>
+          <p>
+            <van-icon name="arrow"/>
+          </p>
+        </li>
+        <li @click="tzPinpaitx">
+          <p>品牌体系</p>
+          <p>
+            <van-icon name="arrow"/>
+          </p>
+        </li>
+        <li @click="tzXiangmuanli">
+          <p>项目案例</p>
+          <p>
+            <van-icon name="arrow"/>
+          </p>
+        </li>
+        <li @click="tzZxzhx">
+          <p>资讯中心</p>
+          <p>
+            <van-icon name="arrow"/>
+          </p>
+        </li>
+        <li @click="tzLxwm">
+          <p>联系我们</p>
+          <p>
+            <van-icon name="arrow"/>
+          </p>
+        </li>
+      </ul>
+    </van-popup>
   </div>
 </template>
 
@@ -111,6 +115,10 @@ export default {
     // 打开H5导航栏
     h5Nav() {
       this.navTopShow = !this.navTopShow
+    },
+    // 返回一个特定的 DOM 节点，作为挂载的父节点
+    getContainer() {
+      return document.querySelector('.yd-header');
     }
   },
   created() {
@@ -168,39 +176,43 @@ li {
       height: 100%;
     }
   }
-  .navTop-dialog-box {
-    position: fixed;
-    top: 126px;
-    left: 0;
+  .navTop-dialog {
     width: 100%;
-    z-index: 100;
-    height: calc(100vh - 126px);
-    background: rgba(0, 0, 0, 0);
-    .navTop-dialog {
-      width: 100%;
-      background: #e7bd6b;
-      > ul {
-        > li {
-          padding: 20px;
-          border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-          display: flex;
-          > p {
-            flex: 1;
-            font-size: 32px;
-            color: #fff;
-          }
-          > p:nth-child(1) {
-            text-align: left;
-          }
-          > p:nth-child(2) {
-            text-align: right;
-            .van-icon {
-              vertical-align: middle;
-            }
+    background: #e7bd6b;
+    > ul {
+      > li {
+        padding: 20px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+        display: flex;
+        > p {
+          flex: 1;
+          font-size: 32px;
+          color: #fff;
+        }
+        > p:nth-child(1) {
+          text-align: left;
+        }
+        > p:nth-child(2) {
+          text-align: right;
+          .van-icon {
+            vertical-align: middle;
           }
         }
       }
     }
+  }
+}
+</style>
+<style lang="less">
+.yd-header {
+  .van-overlay {
+    z-index: 200 !important;
+    // top: 126px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .van-popup {
+    top: 126px;
+    background: #e7bd6b;
   }
 }
 </style>

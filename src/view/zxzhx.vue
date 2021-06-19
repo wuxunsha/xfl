@@ -172,6 +172,7 @@ li {
     .yd-zxzhx-content {
       .van-pagination {
         font-size: 24px;
+        justify-content: center;
       }
       .van-pagination__item {
         color: #000;
@@ -179,6 +180,7 @@ li {
         margin: 0 10px;
         border: 2px solid #d8dadf;
         padding: 0 24px;
+        flex: inherit;
       }
       .van-pagination__item--active {
         background-color: #333;
@@ -192,4 +194,3 @@ li {
   }
 }
 </style>
-

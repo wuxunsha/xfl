@@ -63,16 +63,16 @@
       <div class="banner-box" ref="bannerImage">
         <el-carousel :interval="5000" height="630px">
           <el-carousel-item>
-            <img src="../assets/image/banner/1-2103021SHS95.jpg" alt>
+            <img src="http://1.117.6.15/1-2103021SHS95.jpg" alt>
           </el-carousel-item>
           <el-carousel-item>
-            <img src="../assets/image/banner/banner01.jpg" alt>
+            <img src="http://1.117.6.15/banner01.jpg" alt>
           </el-carousel-item>
           <el-carousel-item>
-            <img src="../assets/image/banner/banner02.jpg" alt>
+            <img src="http://1.117.6.15/banner02.jpg" alt>
           </el-carousel-item>
           <el-carousel-item>
-            <img src="../assets/image/banner/banner03.jpg" alt>
+            <img src="http://1.117.6.15/banner03.jpg" alt>
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -90,7 +90,7 @@
               </h4>
               <p>新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链一体化新模式的探索，以前瞻视野和创新驱动聚力打造一站式全品类家装产品供应以及精装服务的升级转型。</p>
               <p>公司始终以客户需求为中心，坚持全产业链一体化多方共赢的可持续经营理念，与国内外知名品牌厂商集中采购深度合作，去中间化以及C2F全产业供应链流通环节无缝衔接，充分发挥在基础装修、主材产品、固装家具、活动家具、软装配饰、全屋家电等家居资源的规模效应和集采优势，为实现客户拎包入住提供一站式最具性价比优势的整体家装解决方案。</p>
-              <div class="ibrand-num">
+              <!-- <div class="ibrand-num">
                 <ul>
                   <li>
                     <p>
@@ -132,10 +132,10 @@
                     <p>项目覆盖面积</p>
                   </li>
                 </ul>
-              </div>
+              </div> -->
             </div>
             <div class="about-us-content-image">
-              <img src="../assets/image/gywm/gywm.png" alt>
+              <img src="http://1.117.6.15/gywm.png" alt>
             </div>
           </div>
         </div>
@@ -517,17 +517,19 @@
             <div class="xgzx-swiper">
               <el-carousel :interval="4000" height="410px">
                 <el-carousel-item v-for="item in xgzxLIst" :key="item.id">
-                  <div class="swiper-image-box">
-                    <el-image :src="item.src" class="swiper-image"></el-image>
+                  <div @click="ydzxDetails(item.value)" class="pc-swiper-xgzx-box">
+                    <div class="swiper-image-box">
+                      <el-image :src="item.src" class="swiper-image"></el-image>
+                    </div>
+                    <p class="swiper-title">{{item.title}}</p>
+                    <p class="swiper-text">{{item.text}}</p>
                   </div>
-                  <p class="swiper-title">{{item.title}}</p>
-                  <p class="swiper-text">{{item.text}}</p>
                 </el-carousel-item>
               </el-carousel>
             </div>
             <div class="xgzx-details">
               <ul>
-                <li>
+                <li @click="ydzxDetails(1)">
                   <div>
                     <p>10</p>
                     <p>2021-05</p>
@@ -537,7 +539,7 @@
                     <p>新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链...</p>
                   </div>
                 </li>
-                <li>
+                <li @click="ydzxDetails(2)">
                   <div>
                     <p>30</p>
                     <p>2021-04</p>
@@ -550,18 +552,21 @@
               </ul>
             </div>
           </div>
-          <div class="xgzx-gd">
+          <!-- <div class="xgzx-gd">
             <p>
               <span>
                 查看更多
                 <i class="el-icon-d-arrow-right"></i>
               </span>
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
       <!-- 底部 -->
       <footerPc></footerPc>
+
+      <toolbar></toolbar>
+
     </div>
     <div v-else class="yd">
       <!-- 顶部导航栏 -->
@@ -583,7 +588,7 @@
           </van-swipe-item>
         </van-swipe>
       </div>
-      <div class="yd-numb">
+      <!-- <div class="yd-numb">
         <ul>
           <li>
             <p>
@@ -617,7 +622,7 @@
               <p>项目覆盖面积</p>
           </li>
         </ul>
-      </div>
+      </div> -->
       <!-- 品牌优势 -->
       <div class="yd-main">
         <div class="main3_l">
@@ -940,6 +945,7 @@ import footerYd from '../components/yd/footerYd.vue'
 import headerYd from '../components/yd/headerYd.vue'
 import bottomYd from '../components/yd/bottomYd.vue'
 import footerPc from '../components/pc/footerPc.vue'
+import toolbar from '../components/pc/toolbar.vue'
 export default {
   name: 'main',
   data() {
@@ -949,25 +955,25 @@ export default {
       imgLIst: [
         {
           id: "carousel-item-1",
-          src: require("../assets/image/zzkj/xzsjy.png"),
+          src: "http://1.117.6.15/xzsjy.png",
           title: '新中式简约',
           value: 1
         },
         {
           id: "carousel-item-2",
-          src: require("../assets/image/zzkj/xdqszs.png"),
+          src: "http://1.117.6.15/xdqszs.png",
           title: '现代轻奢',
           value: 2
         },
         {
           id: "carousel-item-3",
-          src: require("../assets/image/zzkj/jyos.png"),
+          src: "http://1.117.6.15/jyos.png",
           title: '简约欧式',
           value: 3
         },
         {
           id: "carousel-item-4",
-          src: require("../assets/image/zzkj/xdhbh.png"),
+          src: "http://1.117.6.15/xdhbh.png",
           title: '现代黑白灰',
           value: 4
         }
@@ -1012,13 +1018,15 @@ export default {
           id: "carousel-xgzx-1",
           src: require("../assets/image/gywm/gywm.png"),
           title: '房地产营销全业态创新发展模式践行者',
-          text: '新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链...'
+          text: '新方略信息科技有限公司隶属于佳银集团旗下全资子公司，凭借多年房地产开发经验及家装产业链的资源整合，全心致力于房地产+全屋设计+全屋整装+C2F全产品供应链...',
+          value: 1
         },
         {
           id: "carousel-xgzx-2",
           src: require("../assets/image/xgzx/xgzx02.jpg"),
           title: '一站式全屋整装 拎包入住 赠送价值12万品牌套餐包',
-          text: '我们不仅仅是送，新方略首创一站式厂商源头集采，更是一种全新生活方式的创享'
+          text: '我们不仅仅是送，新方略首创一站式厂商源头集采，更是一种全新生活方式的创享',
+          value: 2
         }
       ],
       // 移动端
@@ -1055,7 +1063,8 @@ export default {
     footerYd,
     headerYd,
     bottomYd,
-    footerPc
+    footerPc,
+    toolbar
   },
   created() {
     console.log(this.isEquipmentType)
@@ -1146,7 +1155,7 @@ export default {
         }
       })
     },
-    // 移动资讯详情
+    // 资讯详情
     ydzxDetails(type) {
       this.$router.push({
         path: '/ydzxDetails',
@@ -1157,10 +1166,10 @@ export default {
     },
     handleScrollx() {
       if(this.isEquipmentType === 'pc') {
-        this.$refs.myNum01.start()
-        this.$refs.myNum02.start()
-        this.$refs.myNum03.start()
-        this.$refs.myNum04.start()
+        // this.$refs.myNum01.start()
+        // this.$refs.myNum02.start()
+        // this.$refs.myNum03.start()
+        // this.$refs.myNum04.start()
         let topOffset = this.$refs.bannerImage.getBoundingClientRect().top
         if (topOffset < 0) {
           this.offsetFlag = true
@@ -1444,7 +1453,7 @@ li {
       width: 100%;
       padding-top: 20px; /*no*/
       height: 760px; /*no*/
-      background: url(../assets/image/main3.jpg) no-repeat;
+      background: url(http://1.117.6.15/main3.jpg) no-repeat;
       .main3_l {
         width: 1200px; /*no*/
         margin: 0 auto;
@@ -1598,15 +1607,15 @@ li {
               }
             }
             > li:nth-child(1) {
-              background: url(../assets/image/yd/tc11.jpg) no-repeat;
+              background: url(http://1.117.6.15/tc11.jpg) no-repeat;
               background-size: 100% 100%;
             }
             > li:nth-child(2) {
-              background: url(../assets/image/yd/tc22.jpg) no-repeat;
+              background: url(http://1.117.6.15/tc22.jpg) no-repeat;
               background-size: 100% 100%;
             }
             > li:nth-child(3) {
-              background: url(../assets/image/yd/tc33.jpg) no-repeat;
+              background: url(http://1.117.6.15/tc33.jpg) no-repeat;
               background-size: 100% 100%;
             }
           }
@@ -2022,28 +2031,33 @@ li {
             width: 385px; /*no*/
             height: 410px; /*no*/
             border: 1px solid #ccc; /*no*/
-            .swiper-image-box {
-              position: relative;
+            .pc-swiper-xgzx-box {
               width: 100%;
-              height: 280px; /*no*/
-              .swiper-image {
+              height: 100%;
+              cursor: pointer;
+              .swiper-image-box {
+                position: relative;
                 width: 100%;
-                height: 100%;
+                height: 280px; /*no*/
+                .swiper-image {
+                  width: 100%;
+                  height: 100%;
+                }
               }
-            }
-            .swiper-title {
-              // position: absolute;
-              // bottom: 80px;
-              color: #000;
-              font-size: 18px; /*no*/
-              text-align: left;
-              padding: 10px 20px 6px; /*no*/
-            }
-            .swiper-text {
-              color: #666;
-              font-size: 14px; /*no*/
-              text-align: left;
-              padding: 0 20px; /*no*/
+              .swiper-title {
+                // position: absolute;
+                // bottom: 80px;
+                color: #000;
+                font-size: 18px; /*no*/
+                text-align: left;
+                padding: 10px 20px 6px; /*no*/
+              }
+              .swiper-text {
+                color: #666;
+                font-size: 14px; /*no*/
+                text-align: left;
+                padding: 0 20px; /*no*/
+              }
             }
           }
           .xgzx-details {
@@ -2133,6 +2147,82 @@ li {
         }
       }
     }
+    .toolbar {
+      width: 130px; /*no*/
+      position: fixed;
+      right: 15px; /*no*/
+      top: 460px; /*no*/
+      z-index: 999;
+      >ul {
+        >li {
+          cursor: pointer;
+          >p {
+            >span:nth-child(1) {
+              width: 24px; /*no*/
+              height: 24px; /*no*/
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 5px; /*no*/
+            }
+          }
+        }
+        >li:nth-child(1),
+        >li:nth-child(2) {
+          width: 130px; /*no*/
+          height: 55px; /*no*/
+          background: url(../assets/image/rightfixicon.png) no-repeat -36px 0; /*no*/
+          >p {
+            color: #fff;
+            font-size: 16px; /*no*/
+            line-height: 48px; /*no*/
+          }
+        }
+        >li:nth-child(1) {
+          >p {
+            >span {
+              background: url(../assets/image/rightfixicon.png) no-repeat 0 -33px; /*no*/
+            }
+          }
+        }
+        >li:nth-child(2) {
+          >p {
+            .lxdh-icon {
+              background: url(../assets/image/rightfixicon.png) no-repeat 0 -65px; /*no*/
+            }
+          }
+          >p:nth-child(1) {
+            display: block;
+          }
+          >p:nth-child(2) {
+            display: none;
+          }
+        }
+        >li:nth-child(2):hover {
+          >p:nth-child(1) {
+            display: none;
+          }
+          >p:nth-child(2) {
+            display: block;
+            >span {
+              display: contents;
+            }
+          }
+        }
+        >li:nth-child(3) {
+          width: 130px; /*no*/
+          height: 45px; /*no*/
+          background: #e9bb5f;
+          >p {
+            color: #fff;
+            font-size: 16px; /*no*/
+            line-height: 45px; /*no*/
+            >span:nth-child(1) {
+              background: url(../assets/image/rightfixicon.png) no-repeat 0 -127px; /*no*/
+            }
+          }
+        }
+      }
+    }
   }
 
   /*-----移动---------*/
@@ -2205,7 +2295,7 @@ li {
     }
     .yd-main {
       width: 100%;
-      padding: 20px;
+      padding: 20px 0;
       background: url(../assets/image/yd/main3.jpg) no-repeat;
       background-size: 100% 100%;
       .main3_l {
@@ -2787,4 +2877,3 @@ li {
   }
 }
 </style>
-
