@@ -3,7 +3,7 @@ import qs from 'qs'
 import { Toast } from 'vant'
 
 // let interfaceURL = 'http://la.lycs.top'
-let interfaceURL = 'http://utc.lycs.top/api'
+let interfaceURL = 'http://1.117.6.15:9000/note-service/note'
 
 const service = axios.create({
   baseURL: interfaceURL, // 正式环境
@@ -34,7 +34,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     // 这里根据后端提供的数据进行对应的处理
-    if (response.data.code === 1) {
+    if (response.data.code === 0) {
       return response.data
     } else if (response.data.code === -100) {
       // Toast({

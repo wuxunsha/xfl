@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import { save } from '@/api/index'
 import store from '../store/index.js'
 import { Toast } from 'vant'
 export default {
@@ -103,7 +104,17 @@ export default {
         Toast.fail('请选择您的项目状态')
         return
       }
-      this.isFlag = false
+      let _obj = {
+        username: this.formData.name,
+        mobile: this.formData.phone,
+        address: this.formData.address,
+        status: this.formData.status
+      }
+      save(_obj).then(res => {
+        if(res.code === 0) {
+          this.isFlag = false
+        }
+      })
     }
   }
 }

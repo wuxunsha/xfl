@@ -1,19 +1,10 @@
 import request from '@/utils/request'
 
-// 助记词登录
-export function loginByWord(str) {
+// 提交咨询
+export function save(params) {
   return request({
-    url: '/login/mnemonic',
+    url: '/wxconsultation/save',
     method: 'post',
-    data: str
-  })
-}
-
-// 登出
-export function quit(data) {
-  return request({
-    url: '/index/login/quit',
-    method: 'get',
-    data
+    data: params
   })
 }

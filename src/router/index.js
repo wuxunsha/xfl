@@ -106,6 +106,12 @@ export default new Router({
           name: 'questionnaires',
           component: (resolve) => require(['@/view/questionnaires'], resolve),
           meta: { keepAlive: true, title: '一键咨询'},
+        },
+        {
+          path: '/inquiryList',
+          name: 'inquiryList',
+          component: (resolve) => require(['@/view/inquiryList'], resolve),
+          meta: { keepAlive: true, title: '咨询列表'},
         }
       ]
     }

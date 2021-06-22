@@ -2844,6 +2844,12 @@ li {
 .main-box .xgzx .el-carousel__indicator.is-active button {
   background: #e9bb5f;
 }
+.main-box .banner-box .el-carousel__button {
+  background: #999;
+}
+.main-box .banner-box .el-carousel__indicator.is-active button {
+  background: #e9bb5f;
+}
 .main-box .xmal .el-carousel__item:hover {
   .swiper-title {
     color: #e9bb5f !important;
